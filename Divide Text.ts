@@ -16,6 +16,9 @@
     MIT License
 
   バージョン情報
+    2016/11/03 Ver 1.0.1 Update
+      テキストが一文字の時,処理を飛ばすようにした.
+
     2016/11/03 Ver 1.0.0 Release
 */
 
@@ -65,6 +68,9 @@
 
     for (let i = 0; i < textLayers.length; i++) {
       curText = String(textLayers[i].property(ADBE_TEXT_PROPERTIES).property(ADBE_TEXT_DOCUMENT).value);
+      if(curText.length == 1){
+        continue;
+      }
 
       for (let j = 0; j < curText.length; j++) {
         if (curText[j] == "" || curText[j] == " " || curText[j] == "　") {
