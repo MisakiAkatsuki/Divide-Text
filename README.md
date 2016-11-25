@@ -1,4 +1,4 @@
-﻿# Divide Text
+# Divide Text
 (C) あかつきみさき(みくちぃP)
 
 ## このスクリプトについて
