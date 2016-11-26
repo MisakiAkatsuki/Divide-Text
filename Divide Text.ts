@@ -4,7 +4,7 @@
   const ADBE_TEXT_PROPERTIES: string = "ADBE Text Properties";
   const ADBE_TEXT_DOCUMENT: string = "ADBE Text Document";
 
-  const isCompActive = function (comp: CompItem) {
+  const isCompActive = function (comp: CompItem): boolean {
     if (!(comp && comp instanceof CompItem)) {
       return false;
     } else {
@@ -12,7 +12,7 @@
     }
   }
 
-  const isLayerSelected = function (layers: Layer[]) {
+  const isLayerSelected = function (layers: Layer[]): boolean {
     if (layers.length === 0) {
       return false;
     } else {
@@ -44,7 +44,7 @@
 
     for (let i = 0; i < textLayers.length; i++) {
       curText = String(textLayers[i].property(ADBE_TEXT_PROPERTIES).property(ADBE_TEXT_DOCUMENT).value);
-      if(curText.length == 1){
+      if (curText.length == 1) {
         continue;
       }
 
