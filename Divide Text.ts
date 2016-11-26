@@ -29,19 +29,18 @@
     const selLayers: Layer[] = <Layer[]>actComp.selectedLayers;
     let textLayers: TextLayer[] = [];
 
-    // テキストレイヤーを選択している場合はテキストレイヤーのみ抽出,選択していない場合は新規追加する
-    if (isLayerSelected(selLayers)) {
-      for (let i = 0; i < selLayers.length; i++) {
-        if (selLayers[i] instanceof TextLayer) {
-          textLayers.push(<TextLayer>selLayers[i]);
-        }
-      }
-    } else {
+    if (!isLayerSelected(selLayers)) {
       return 0;
     }
 
-    let curText: string = "";
+    // テキストレイヤーを選択している場合はテキストレイヤーのみ抽出,選択していない場合は新規追加する
+    for (let i = 0; i < selLayers.length; i++) {
+      if (selLayers[i] instanceof TextLayer) {
+        textLayers.push(<TextLayer>selLayers[i]);
+      }
+    }
 
+    let curText: string = "";
     for (let i = 0; i < textLayers.length; i++) {
       curText = String(textLayers[i].property(ADBE_TEXT_PROPERTIES).property(ADBE_TEXT_DOCUMENT).value);
       if (curText.length == 1) {

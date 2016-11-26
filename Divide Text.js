@@ -25,16 +25,14 @@
         }
         var selLayers = actComp.selectedLayers;
         var textLayers = [];
-        // テキストレイヤーを選択している場合はテキストレイヤーのみ抽出,選択していない場合は新規追加する
-        if (isLayerSelected(selLayers)) {
-            for (var i = 0; i < selLayers.length; i++) {
-                if (selLayers[i] instanceof TextLayer) {
-                    textLayers.push(selLayers[i]);
-                }
-            }
-        }
-        else {
+        if (!isLayerSelected(selLayers)) {
             return 0;
+        }
+        // テキストレイヤーを選択している場合はテキストレイヤーのみ抽出,選択していない場合は新規追加する
+        for (var i = 0; i < selLayers.length; i++) {
+            if (selLayers[i] instanceof TextLayer) {
+                textLayers.push(selLayers[i]);
+            }
         }
         var curText = "";
         for (var i = 0; i < textLayers.length; i++) {
