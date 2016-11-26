@@ -20,7 +20,7 @@
     }
   }
 
-  const main = function () {
+  const main = function (): number {
     const actComp: CompItem = <CompItem>app.project.activeItem;
     if (!isCompActive(actComp)) {
       return 0;
@@ -52,9 +52,12 @@
         if (curText[j] == "" || curText[j] == " " || curText[j] == "　") {
           continue;
         }
+
         actComp.layers.addText(new TextDocument(curText[j]));
       }
     }
+
+    return 0;
   }
 
   app.beginUndoGroup("Divide Text");

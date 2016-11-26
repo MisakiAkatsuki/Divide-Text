@@ -49,6 +49,7 @@
                 actComp.layers.addText(new TextDocument(curText[j]));
             }
         }
+        return 0;
     };
     app.beginUndoGroup("Divide Text");
     main();
