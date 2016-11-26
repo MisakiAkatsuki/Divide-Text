@@ -1,26 +1,3 @@
-/*
-  Divide Text
-    (C) あかつきみさき(みくちぃP)
-
-  このスクリプトについて
-    選択したテキストレイヤーのソーステキストを一文字ずつ新規レイヤーとして追加します.
-    追加する際,半角スペースと全角スペースは無視されます.
-
-  使用方法
-    1.ファイル→スクリプト→スクリプトファイルの実行から実行.
-
-  動作環境
-    Adobe After Effects CS6以上
-
-  ライセンス
-    MIT License
-
-  バージョン情報
-    2016/11/03 Ver 1.0.1 Update
-      テキストが一文字の時,処理を飛ばすようにした.
-
-    2016/11/03 Ver 1.0.0 Release
-*/
 /// <reference path="C:/Users/RUI/OneDrive/lib/aftereffects.d.ts/ae.d.ts"/>
 (function () {
     var ADBE_TEXT_PROPERTIES = "ADBE Text Properties";
